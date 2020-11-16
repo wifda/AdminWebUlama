@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Ulama;
+
 
 class PageController extends Controller
 {
@@ -24,8 +27,11 @@ class PageController extends Controller
      */
     public function index(string $page)
     {
+        $ulama = DB::table('ulama')->paginate(10);
+        //$ulama = Ulama::all();
+
         if (view()->exists("pages.{$page}")) {
-            return view("pages.{$page}");
+            return view("pages.{$page}", compact('ulama'));
         }
 
         return abort(404);
