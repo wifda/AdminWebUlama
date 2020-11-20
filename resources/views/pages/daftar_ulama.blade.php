@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'class' => '',
-    'elementActive' => 'icons'
+    'elementActive' => 'daftar_ulama'
 ])
 <style type="text/css">
 	.pagination li{
@@ -13,30 +13,28 @@
 <div class="content">
     <div class="row">
         <div class="col-md-12">
+            <form action="{{ url()->current() }}">
+                <input type="text" name="keyword" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-primary"><i class="nc-icon nc-zoom-split"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title"> Daftar Ulama Syafi'i</h4>
                 </div>
                 <div class="card-body">
-                    <div id="table-ulama" class="table-responsive">
+                    <div class="table-responsive">
                         <table  class="table">
                             <thead class=" text-primary">
-                                <th>
-                                    No
-                                </th>
-                                <th>
-                                    Nama Ulama
-                                </th>
-                                <th>
-                                    Tahun Kelahiran (Masehi)
-                                </th>
-                                <th>
-                                    Tempat Kelahiran
-                                </th>
-                                <th>
-                                </th>
-                                <th>
-                                </th>
+                                <th>No</th>
+                                <th>Nama Ulama</th>
+                                <th>Tahun Kelahiran (Masehi)</th>
+                                <th>Tempat Kelahiran</th>
+                                <th></th>
+                                <th></th>
                             </thead>
                             <tbody>
                             <tr>
@@ -111,9 +109,5 @@
                 listItems[i].appendChild(charCharac);
             }
         }
-        
-        $(document).ready(function() {
-            $('#table-ulama').DataTable();
-        } );
     </script>
 @endpush

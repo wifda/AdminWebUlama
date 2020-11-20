@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'class' => 'login-page',
-    'backgroundImagePath' => 'img/bg/fabio-mangione.jpg'
+    'backgroundImagePath' => 'img/bg/cairo.jpg'
 ])
 
 @section('content')

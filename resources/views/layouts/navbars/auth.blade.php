@@ -5,7 +5,7 @@
                 <img src="{{ asset('paper') }}/img/logo.png">
             </div>
         </a>
-        <a href="#" class="simple-text logo-normal">
+        <a href="{{ route('page.index', 'dashboard') }}" class="simple-text logo-normal">
             {{ __('UlamaMaps') }}
         </a>
     </div>

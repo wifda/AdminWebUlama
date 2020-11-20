@@ -25,9 +25,16 @@ class PageController extends Controller
      * @param string $page
      * @return \Illuminate\View\View
      */
-    public function index(string $page)
+    public function index(Request $request,string $page)
     {
-        $ulama = DB::table('ulama')->paginate(10);
+        $ulama = Ulama::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama_ulama', 'like', "%{$request->keyword}%")
+                ->orWhere('tempat_lahir', 'like', "%{$request->keyword}%");
+        })->paginate(10);
+    
+        $ulama->appends($request->only('keyword'));
+        
+        //$ulama = DB::table('ulama')->paginate(10);
         //$ulama = Ulama::all();
 
         if (view()->exists("pages.{$page}")) {
