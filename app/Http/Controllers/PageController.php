@@ -25,7 +25,7 @@ class PageController extends Controller
      * @param string $page
      * @return \Illuminate\View\View
      */
-    public function index(Request $request,string $page)
+    public function index(Request $request, string $page)
     {
         $ulama = Ulama::when($request->keyword, function ($query) use ($request) {
             $query->where('nama_ulama', 'like', "%{$request->keyword}%")
@@ -34,9 +34,6 @@ class PageController extends Controller
     
         $ulama->appends($request->only('keyword'));
         
-        //$ulama = DB::table('ulama')->paginate(10);
-        //$ulama = Ulama::all();
-
         if (view()->exists("pages.{$page}")) {
             return view("pages.{$page}", compact('ulama'));
         }
@@ -44,8 +41,43 @@ class PageController extends Controller
         return abort(404);
     }
 
-    public function add(){
-        $ulama = Ulama::all();
-        return view("pages/form_tambahdata", ['ulama' => $ulama]);
+    public function lihatbiografi(Request $request, string $page)
+    {
+        $ulama = Ulama::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama_ulama', 'like', "%{$request->keyword}%")
+                ->orWhere('tempat_lahir', 'like', "%{$request->keyword}%");
+        })->paginate(10);
+    
+        $ulama->appends($request->only('keyword'));
+        
+        return view("pages/biografi", compact('ulama'));
+
+    }
+
+    public function tambahdata(Request $request, string $page)
+    {
+        $ulama = Ulama::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama_ulama', 'like', "%{$request->keyword}%")
+                ->orWhere('tempat_lahir', 'like', "%{$request->keyword}%");
+        })->paginate(10);
+    
+        $ulama->appends($request->only('keyword'));
+
+        $this->validate($request,[
+            'namaulama' => 'required',
+            'tahunlahir' => 'required',
+            'tempatlahir' => 'required',
+            'biografi' => 'required'
+        ]);
+
+        $id = Ulama::create([
+            'nama_ulama' =>$request->namaulama,
+            'tahun_lahir' =>$request->tahunlahir,
+            'tempat_lahir' => $request->tempatlahir,
+            'biografi' => $request->biografi
+        ]);
+
+        return view("pages/daftar_ulama");
+        
     }
 }

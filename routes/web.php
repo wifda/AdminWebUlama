@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	//Route::resource('page', 'PageController', ['except' => ['show']]);
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
-	
+	Route::post('{page}', ['as' => 'page.tambahdata', 'uses' => 'PageController@tambahdata']);
 });
 
 
