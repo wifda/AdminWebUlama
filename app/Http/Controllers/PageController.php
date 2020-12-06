@@ -43,4 +43,9 @@ class PageController extends Controller
 
         return abort(404);
     }
+
+    public function add(){
+        $ulama = Ulama::all();
+        return view("pages/form_tambahdata", ['ulama' => $ulama]);
+    }
 }

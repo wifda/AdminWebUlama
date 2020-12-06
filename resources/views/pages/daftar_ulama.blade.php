@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <form action="{{ url()->current() }}">
                 <input type="text" name="keyword" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-primary"><i class="nc-icon nc-zoom-split"></i></button>
+                <button type="submit" class="btn btn-primary btn-round"><i class="nc-icon nc-zoom-split"></i></button>
             </form>
         </div>
     </div>
@@ -24,6 +24,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title"> Daftar Ulama Syafi'i</h4>
+                    <a href="{{ route('page.index', 'form_tambahdata') }}" class="btn btn-md btn-info btn-round">Tambah <i class="fa fa-plus-circle"></i></a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -45,8 +46,8 @@
                             <td>{{ $u->nama_ulama }}</td>
                             <td>{{ $u->tahun_lahir }}</td>
                             <td>{{ $u->tempat_lahir }}</td>
-                            <td><button class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></button></td>
-                            <td><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button></td>
+                            <td><a href="{{ route('page.index', 'form_updatedata') }}" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="{{ route('page.index', 'form_tambahdata') }}" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data ulama ini?');"><i class="fa fa-trash"></i></a></td>
                             </tr>
                             @endforeach
                                

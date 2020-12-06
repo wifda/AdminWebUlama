@@ -30,10 +30,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+	//Route::resource('page', 'PageController', ['except' => ['show']]);
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
+	
 });
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => 'auth'], function () {
+	//Route::resource('page', 'PageController', ['except' => ['show']]);
+	Route::get('/ulama/search/', 'DataUlamaController@index');
+});
+// Route::get('ulama/search/', 'PageController@index');
+// Route::get('ulama/search/{nama_ulama}', 'DataUlamaController@search');

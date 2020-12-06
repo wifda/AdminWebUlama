@@ -23,11 +23,6 @@
                     <p>{{ __('Daftar Ulama') }}</p>
                 </a>
             </li>
-            <li class="{{ $elementActive == 'map' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'map') }}">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>{{ __('Peta Kelahiran') }}</p>
-                </a>
             </li>
             <li class="{{ $elementActive == 'biografi' ? 'active' : '' }}">
                 <a href="{{ route('page.index', 'biografi') }}">
@@ -35,6 +30,7 @@
                     <p>{{ __('Biografi Ulama') }}</p>
                 </a>
             </li>
+            
         </ul>
     </div>
 </div>
