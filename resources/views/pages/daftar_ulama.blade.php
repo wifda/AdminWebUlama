@@ -10,7 +10,9 @@
 	}
 </style>
 @section('content')
+
 <div class="content">
+@include('pages/flash_message')
     <div class="row">
         <div class="col-md-12">
             <form action="{{ url()->current() }}">
@@ -46,8 +48,8 @@
                             <td>{{ $u->nama_ulama }}</td>
                             <td>{{ $u->tahun_lahir }}</td>
                             <td>{{ $u->tempat_lahir }}</td>
-                            <td><a href="{{ route('page.index', 'form_updatedata') }}" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a></td>
-                            <td><a href="{{ route('page.index', 'form_tambahdata') }}" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data ulama ini?');"><i class="fa fa-trash"></i></a></td>
+                            <td><a href="ulama/edit/{{ $u->ulama_id }}" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a></td>
+                            <td><a href="ulama/hapus/{{ $u->ulama_id }}" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data ulama ini?');"><i class="fa fa-trash"></i></a></td>
                             </tr>
                             @endforeach
                                
@@ -60,8 +62,9 @@
             </div>
         </div>
     </div>
+    @yield('content')  
 </div>            
-                
+   
 @endsection
 
 @push('scripts')

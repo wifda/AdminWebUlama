@@ -8,5 +8,5 @@ class Ulama extends Model
 {
     protected $table = "ulama";
     protected $primaryKey = "ulama_id";
-    protected $fillable = ['nama_ulama','tahun_ulama','tempat_lahir','biografi'];
+    protected $fillable = ['nama_ulama','tahun_lahir','tempat_lahir','biografi'];
 }

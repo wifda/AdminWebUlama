@@ -10,11 +10,13 @@
             <div class="card-body ">
                 <h4>Edit Data Ulama <i class="fa fa-pencil"></i></h4>
                 <hr>
-                <form method="post" action="#">
+                <form method="post" action="/ulama/updateform">
                     {{ csrf_field() }}
+                   
                     <div class="form-group">
+                        <input type="hidden" name="id" value="{{ $ulama->ulama_id }}">
                         <label>Nama Ulama</label>
-                        <input type="text" name="nama_ulama" class="form-control" placeholder="Nama Ulama">
+                        <input type="text" name="nama_ulama" required="required" class="form-control" placeholder="Nama Ulama" value="{{ $ulama->nama_ulama }}">
 
                         @if($errors->has('nama_ulama'))
                             <div class="text-danger">
@@ -25,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tahun Kelahiran (Masehi)</label>
-                        <input type="text" name="tahun_lahir" class="form-control" placeholder="Tahun Kelahiran">
+                        <input type="number" name="tahun_lahir" required="required" class="form-control" placeholder="Tahun Kelahiran" value="{{ $ulama->tahun_lahir }}">
 
                         @if($errors->has('deskripsi'))
                             <div class="text-danger">
@@ -37,7 +39,7 @@
                     
                     <div class="form-group">
                         <label>Tempat Kelahiran</label>
-                        <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Kelahiran">
+                        <input type="text" name="tempat_lahir" required="required" class="form-control" placeholder="Tempat Kelahiran" value="<?php echo "$ulama[tempat_lahir]" ?>">
 
                         @if($errors->has('tempat_lahir'))
                             <div class="text-danger">
@@ -48,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label>Biografi Ulama</label>
-                        <textarea rows="50" cols="100" name="biografi" class="form-control" placeholder="Biografi">Biografi Ulama
+                        <textarea rows="50" cols="100" name="biografi" required="required" class="form-control" placeholder="Biografi"><?php echo "$ulama[biografi]" ?>
                         </textarea>
                         @if($errors->has('biografi'))
                             <div class="text-danger">
@@ -58,7 +60,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-info btn-round" value="Tambahkan">
+                        <input type="submit" class="btn btn-success btn-round" value="Simpan">
                     </div>
                 </form>
             </div>

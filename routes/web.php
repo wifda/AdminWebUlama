@@ -30,11 +30,17 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	//Route::resource('page', 'PageController', ['except' => ['show']]);
 	Route::get('{page}', ['as' => 'page.index', 'uses' => 'PageController@index']);
 	Route::post('{page}', ['as' => 'page.tambahdata', 'uses' => 'PageController@tambahdata']);
 });
 
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('/ulama/edit/{ulama_id}', 'PageController@edit');
+	Route::post('/ulama/updateform', 'PageController@update');
+	Route::get('/ulama/editbiografi/{ulama_id}', 'PageController@editbiografi');
+	Route::post('/ulama/updateformbio', 'PageController@updatebiografi');
+	Route::get('/ulama/hapus/{ulama_id}', 'PageController@hapus');
+});
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
