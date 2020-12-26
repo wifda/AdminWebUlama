@@ -32,7 +32,7 @@
                     </div>
                     <a href="#" class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <a href="ulama/editbiografi/{{ $u->ulama_id }}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a href="#" class="btn btn-danger" onclick="return confirm('Hapus data ulama ini?');"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    <a href="ulama/hapus/{{ $u->ulama_id }}" class="btn btn-danger" onclick="return confirm('Hapus data ulama ini?');"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
