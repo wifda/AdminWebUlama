@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/ulama/editbiografi/{ulama_id}', 'PageController@editbiografi');
 	Route::post('/ulama/updateformbio', 'PageController@updatebiografi');
 	Route::get('/ulama/hapus/{ulama_id}', 'PageController@hapus');
+	Route::get('/site/idx', 'SiteController@actionIndex');
+	Route::get('/site/daftarulama', 'SiteController@actionIndex');
 });
 
 Auth::routes();

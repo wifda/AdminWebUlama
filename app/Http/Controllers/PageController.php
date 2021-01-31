@@ -106,7 +106,7 @@ class PageController extends Controller
         // echo $request->tempat_lahir;
         // echo $request->biografi;
         
-        return redirect('/daftar_ulama')->with('success','Berhasil mengupdate data ulama!');
+        return redirect('/daftar_ulama')->with('success','Berhasil mengedit data ulama!');
     }
 
     public function editbiografi($id){
@@ -123,7 +123,7 @@ class PageController extends Controller
             'biografi' => $request->input('biografi')
         ]);
 
-        return redirect('/biografi')->with('success','Berhasil menambahkan data ulama!');
+        return redirect('/biografi')->with('success','Berhasil mengedit biografi ulama!');
     }
 
     public function hapus($id){

@@ -12,13 +12,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-globe text-warning"></i>
+                                    <i class="nc-icon nc-single-02 text-warning"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Capacity</p>
-                                    <p class="card-title">150GB
+                                    <p class="card-category">Ulamas</p>
+                                    <p class="card-title">111 
                                         <p>
                                 </div>
                             </div>
@@ -27,7 +27,8 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-refresh"></i> Update Now
+                            <i class="fa fa-user"></i> 
+                            Number of Ulamas Represented
                         </div>
                     </div>
                 </div>
@@ -38,13 +39,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-money-coins text-success"></i>
+                                    <i class="nc-icon nc-world-2 text-success"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Revenue</p>
-                                    <p class="card-title">$ 1,345
+                                    <p class="card-category">Countries</p>
+                                    <p class="card-title">15
                                         <p>
                                 </div>
                             </div>
@@ -53,7 +54,7 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-calendar-o"></i> Last day
+                            <i class="fa fa-globe"></i> Birth Places Around the World
                         </div>
                     </div>
                 </div>
@@ -64,13 +65,13 @@
                         <div class="row">
                             <div class="col-5 col-md-4">
                                 <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-vector text-danger"></i>
+                                    <i class="nc-icon nc-calendar-60 text-danger"></i>
                                 </div>
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Errors</p>
-                                    <p class="card-title">23
+                                    <p class="card-category">Years</p>
+                                    <p class="card-title">105
                                         <p>
                                 </div>
                             </div>
@@ -79,12 +80,12 @@
                     <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                            <i class="fa fa-clock-o"></i> In the last hour
+                            <i class="fa fa-clock-o"></i> Various Years of Ulama Birth
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-body ">
                         <div class="row">
@@ -109,9 +110,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header ">
@@ -129,8 +130,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
             <div class="col-md-4">
                 <div class="card ">
                     <div class="card-header ">
@@ -175,7 +176,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 @endsection
 
